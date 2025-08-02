@@ -1,0 +1,6 @@
+Test Case ID,API Endpoint,HTTP Method,Test Scenario,Input Data,Expected Status Code,Response Validation
+TC001,/users,GET,Retrieve user list with pagination,page=1,200,"Contains userId, name, email"
+TC002,/login,POST,Login with valid credentials,"username=test, password=pswd",200,Contains token
+TC003,/login,POST,Login with invalid credentials,"username=wrong, password=wrong",401,Contains error message
+TC004,/user/:id,DELETE,Delete user with valid ID,user_id=123,204,Response body is empty
+TC005,/user/:id,DELETE,Delete user with invalid ID,user_id=xyz,404,Error message in response
